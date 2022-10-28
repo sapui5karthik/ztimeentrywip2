@@ -6,7 +6,7 @@
                     <SelectDialog
                         id="producttabledata"
                         title="Projects"
-                        items="{s2>/}" showClearButton="true" 
+                        items="{s2>/}" showClearButton="true" growing="true"
                         search="_handleValueHelpSearch"
                         confirm="_handleValueHelpClose"
                         cancel="_handleValueHelpClose"

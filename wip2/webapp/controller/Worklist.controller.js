@@ -73,11 +73,15 @@ sap.ui.define([
                 sap.ui.core.BusyIndicator.show(0);
 			});
 
-            
+         
             var prododata = this.getOwnerComponent().getModel("s1");
             prododata.read("/ProjectSet",{
+                urlParameters : {
+                    $select : 'ProjectID,ProjectName'
+                   // $top : 100
+                },
                 success : (odata) => {
-                    
+                      
                     var prodjson = new JSONModel();
                     prodjson.setSizeLimit(odata.results.length);
                     prodjson.setData(odata.results);
