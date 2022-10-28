@@ -83,7 +83,8 @@
                                 <columns>
                                     <Column>
                                         <customData>
-                                            <core:CustomData key="p13nData" value='\{"columnKey": "ProjectID", "leadingProperty": "ProjectID","displayBehaviour": "descriptionOnly", "width": "360px", "index" : "0"}'/>
+                                            <core:CustomData key="p13nData" 
+                                            value='\{"columnKey": "ProjectID", "leadingProperty": "ProjectID","displayBehaviour": "descriptionOnly", "width": "360px", "index" : "0"}'/>
                                         </customData>
                                         <Text text="{i18n>txt_projid}"/>
                                     </Column>
