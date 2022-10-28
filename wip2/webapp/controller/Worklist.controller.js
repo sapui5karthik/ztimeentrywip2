@@ -45,7 +45,7 @@ sap.ui.define([
                         //To apply variant
                         _onAfterVariantLoad: function (oEvent) {
                             var oData = oEvent.getSource().getFilterData()._CUSTOM;
-                            debugger;
+                            
                             if(oData.Projmi !=='') {this.byId("projmultiInput").setValue(oData.Projmi); }
                             if(oData.Custmi !=='') {this.byId("customermultiInput").setValue(oData.Custmi);}
                             if(oData.Stage !=='') {this.byId("stagedd").setSelectedKeys(oData.Stage);}
@@ -77,7 +77,8 @@ sap.ui.define([
             var prododata = this.getOwnerComponent().getModel("s1");
             prododata.read("/ProjectSet",{
                 urlParameters : {
-                    $select : 'ProjectID,ProjectName'
+                    $select : 'ProjectID,ProjectName',
+                    $orderby: 'ProjectID'
                    // $top : 100
                 },
                 success : (odata) => {
@@ -138,8 +139,13 @@ sap.ui.define([
             
             var custodata = this.getOwnerComponent().getModel("customerMDL");
             custodata.read("/A_Customer",{
+                urlParameters : {
+                    $select : 'Customer,CustomerName',
+                    $orderby: 'Customer'
+                   // $top : 100
+                },
                 success : (odata) => {
-                    debugger;
+                    
                     var custodatajson = new JSONModel();
                     custodatajson.setSizeLimit(odata.results.length);
                     
@@ -165,7 +171,7 @@ sap.ui.define([
 			evt.getSource().getBinding("items").filter([oFilter]);
 		},
 		selectcustomervalue : function (evt) {
-            debugger;
+            
 			var aSelectedItems = evt.getParameter("selectedItems"),
 				oMultiInput = this.byId("customermultiInput");
 
@@ -237,7 +243,7 @@ sap.ui.define([
            
         },
         onClear : function(oEvent){
-            debugger;
+            
             var oSmtFilter =  this.getView().byId("smartFilterBar");
 
         // CLEAR Project Stage Dropdown
