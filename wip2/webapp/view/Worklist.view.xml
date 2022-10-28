@@ -5,7 +5,7 @@
 
         <semantic:content>
 
-            <Panel headerText="">
+            <Panel headerText="" >
                 <content>
                     <VBox fitContainer="true">
                 
